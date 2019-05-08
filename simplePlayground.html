@@ -9,38 +9,101 @@
     <style>
         table {
             width: auto;
+            font-family: 'Roboto', Helvetica, Arial;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 150%;
         }
 
         table,
         td {
-            border: 1px solid #333;
+            padding: 0px 20px;
         }
 
-        thead,
-        tfoot {
-            background-color: #333;
-            color: #fff;
+        tr:even > td {
+            background-color: #1c1c1c;
         }
 
         table.colors-table tr td:nth-child(2) {
             width: 50px;
         }
 
-        .product {
-            border: 1px solid #333;
+        thead {
+            background-color: #2c2c2c;
+            color: white;
+        }
+
+        .em {
+            font-weight: 300;
+            font-style: italic
+        }
+
+        .product-card {
+            width: 30%;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            padding: 30px;
+            font-family: 'Roboto', Helvetica, Arial;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 150%;
+        }
+
+        .product-card a {
+            color: #1551b2;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .product-card a:visited {
+            font-weight: 500;
+        }
+
+        .product-card a:hover {
+            text-decoration: underline;
+        }
+
+        .product-card a:active {
+            color: #02183d;
+        }
+
+        .prices {
+            width: fit-content;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #eeeeee;
         }
 
         .before-price {
-            font-size: 14px;
+            font-size: 120%;
+            font-weight: 500;
             text-decoration: line-through;
             color: red;
         }
 
         .current-price {
-            font-size: 18px;
-            text-decoration: underline;
+            font-size: 175%;
             color: green;
-            font-weight: bold;
+            font-weight: 700;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid #1f5dba;
+            background-color: #1f5dba;
+            color: white;
+            font-size: 100%;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background-color: #3d7cdb;
+            border: 2px solid #1f5dba;
+        }
+
+        .done {
+            text-decoration: line-through;
         }
 
         section {
@@ -51,56 +114,87 @@
 </head>
 
 <body>
-    <!-- This section is for Text examples -->
+    <!-- Productos -->
     <section>
         <h1>Text</h>
         <p>This section demonstrates the <b>Inline text semantics</b></p>
+        <img src="images/gncap.jpg" alt="This car have 5 stars rating on GNCAP">
 
-        <div class="product">
+        <div class="product-card">
             <img src="images/sample-image.jpg" alt="Product Image" title="Product model Ib874" />
             <h2>Tesla Ib874</h2>
             <p>
-                This car uses the best cutting-edge technology ever seen. <br>
-                From <a href="https://en.wikipedia.org/wiki/Tesla_Autopilot" target="_blank">autopilot</a> to almost
-                unlimited electric battery for clean, fast and autonomous driving.
+                This car uses the best <em>cutting-edge</em> technology ever seen. <br>
+                From <em><a href="https://en.wikipedia.org/wiki/Tesla_Autopilot" target="_blank">autopilot</a></em> to almost
+                <em>unlimited</em> electric battery for <em>clean</em>, fast and <a href="https://en.wikipedia.org/wiki/Self-driving_car">autonomous driving</a>.
             </p>
-            <p>
+            <div class=prices>
                 Before: <span class="before-price">$999</span>
+                <br>
+                <br>
+                Now: <span class="current-price">$800</span>
+                <br>
+                <br>
+                <button>Buy now</button>
+            </div>
+
+        </div>
+        
+        <br>
+
+        <div class="product">
+            <img src="images/sample-image.jpg" alt="Product Image" title="Product model Ib874" />
+            <h2>Tesla IH125</h2>
+            <p>
+                This is a smaller version of the <b>Ib874</b> but with almost the
+same capabilities.
             </p>
             <p>
-                Now: <span class="current-price">$800</span>
+                Before: <span class="before-price">$500</span>
+            </p>
+            <p>
+                Now: <span class="current-price">$400</span>
             </p>
             <button>Buy now</button>
         </div>
+
     </section>
 
-    <!-- This section is for List examples -->
+    <!-- Listas -->
     <section>
-        <h1>List</h1>
-        <h3>Calls procedure checklist</h3>
-        <ol>
-            <li><br>Answer</b> call</li>
-            <li><b>Ask</b> for insurance</li>
-            <lr><b>Ask</b> for injuries</li>
-            <li><b>Find</b> a doctor nearby</li>
-            <li>
-                Complaint procedure
-                <ul>
-                    <li>Fill complaint form</li>
-                    <li>Call boss</li>
-                    <li>Hangout</li>
-                </ul>
-            </li>
-        </ol>
-        <h3>TODO List</h3>
-        <ul>
-            <li>Call Mom</li>
-            <lt>Buy tickets</lt>
-            <li>Do homework</li>
-        </ul>
-    </section>
+            <h1>List</h1>
+            <h3>Calls procedure checklist</h3>
+            <ol>
+                <li><b>Answer</b> call</li>
+                <li><b>Ask</b> for <em>insurance</em></li>
+                <li><b>Ask</b> for injuries</li>
+                <li><b>Find</b> a doctor <em>nearby</em></li>
+                <li>
+                    Complaint procedure
+                    <ol>
+                        <li>Fill complaint form</li>
+                        <li>Hangout</li>
+                        <li>Call boss</li>
+                    </ol>
+                </li>
+            </ol>
+    
+            <h3>TODO List</h3>
+            <ul>
+                <li class=done>Call Mom</li>
+                <li class=done>Buy tickets</li>
+                <li>
+                    Do homework
+                    <ul>
+                        <li>English exercises</li>
+                        <li>FED exercises</li>
+                        <li>Read about HTML syntax</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-    <!-- This section is for Table examples -->
+    <!-- Tablas -->
     <section>
         <h1>Tables</h1>
         <h3>Simple Table</h3>
@@ -108,9 +202,10 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <ts>Company</ts>
+                    <th>Company</th>
                     <th>E-Mail</th>
                     <th>Phone</th>
+                    <th>Age</th>
                 </tr>
             </thead>
             <tbody>
@@ -119,12 +214,21 @@
                     <td>Facebook</td>
                     <td>john.doe@facebook.com</td>
                     <td>1579532154</td>
+                    <td>24</td>
                 </tr>
                 <tr>
                     <td>Karen Roik</td>
                     <td>Google</td>
                     <td>karen.roik@google.com</td>
                     <td>9846121541</td>
+                    <td>29</td>
+                </tr>
+                <tr>
+                    <td>Dann Reely</td>
+                    <td>Microsoft</td>
+                    <td>dann.reely@microsoft.com</td>
+                    <td>7512156543</td>
+                    <td>34</td>
                 </tr>
             </tbody>
         </table>
@@ -133,7 +237,7 @@
         <table class="colors-table">
             <thead>
                 <tr>
-                    <th colspan="4">CSS Colors</th>
+                    <th colspan="5">CSS Colors</th>
                 </tr>
             </thead>
             <tbody>
@@ -286,7 +390,7 @@
                 <tr>
                     <td style="background:khaki;">&nbsp;</td>
                     <td>khaki</td>
-                    <tl>#F0E68C</tl>
+                    <td>#F0E68C</td>
                     <td>rgb(240,230,140)</td>
                 </tr>
                 <tr>
@@ -311,7 +415,7 @@
                     <td style="background:darkslateblue;">&nbsp;</td>
                     <td>darkslateblue</td>
                     <td>#483D8B</td>
-                    <tl>rgb(72,61,139)</tl>
+                    <td>rgb(72,61,139)</td>
                 </tr>
             </tbody>
         </table>

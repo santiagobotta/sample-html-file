@@ -16,12 +16,37 @@
             color: #1c1c1c;
             font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
+        ul.todo-list{
+            list-style-type: none;
+            width: 30%;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        ul.todo-list li{
+            margin: 5px 10px;
+            padding: 12px 24px;
+            background-color: #cbd9f2;
+            border: 2px solid #a4bce8;
+            border-radius: 100px;
+        }
+        ul li.done {
+            background-color: #eeeeee;
+            border: none;
+            text-decoration: line-through;
+        }
     </style>
 </head>
 
 <body>
     <h1>Hola</h1>
     <p>Estamos en el curso <b>FED</b> de Senpai </p>
+    <br>
+    <br>
+    <ul class=todo-list>
+        <li class=done>Call Mom</li>
+        <li class=done>Buy tickets</li>
+        <li>Do homework</li>
+    </ul>
+
 </body>
 
 </html>
